@@ -119,9 +119,11 @@
          <div class='card-body'>
             <h4 class='card-title'>
                    <a href='#'></a>
-               <h4><?php echo $row['price'] ?></h4> 
-                 <h5><?php echo $row['price'] ?></h5> 
-                 <p class='card-text'><?php echo $row['name'] ?></p>
+                   <p class='card-text' style="font-family: 'Times New Roman;"><?php echo $row['name'] ?></p> 
+             
+                 <h5><?php echo $row['description'] ?></h5> 
+                <label>Rs:</label> <label class='card-text'><?php echo $row['price'] ?>.00</label> 
+               
                 </div> 
                 <div class='card-footer'>
                  <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small> 
@@ -132,15 +134,17 @@
     <?php
             }else{ ?>
 
-              <div class='col-lg-3 col-md-4 mb-3 ml-5 mr-5 mt-5' class="myDIV" >
-              <div class='card h-100'> 
+<div class='col-lg-3 col-md-4 mb-3 ml-5 mr-5 mt-5'>
+          <div class='card h-100'> 
           <a href='#'><img class='card-img-top' src="photo/product/<?php echo $row['image'] ?>"></a>
          <div class='card-body'>
             <h4 class='card-title'>
                    <a href='#'></a>
-               <h4><?php echo $row['price'] ?></h4> 
-                 <h5><?php echo $row['price'] ?></h5> 
-                 <p class='card-text'><?php echo $row['name'] ?></p>
+                   <p class='card-text'style="font-family: 'Times New Roman;"><?php echo $row['name'] ?></p> 
+             
+                 <h5><?php echo $row['description'] ?></h5> 
+                <label>Rs:</label> <label class='card-text'><?php echo $row['price'] ?>.00</label> 
+               
                 </div> 
                 <div class='card-footer'>
                  <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small> 
