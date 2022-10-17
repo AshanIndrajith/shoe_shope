@@ -106,9 +106,9 @@
                $result=mysqli_query($conn,$sql);
                
                
-               $a=0;
+      
                while($row=mysqli_fetch_array($result)){
-                  if ($a < 6) {
+                  
   
                ?>
                
@@ -123,6 +123,9 @@
              
                  <h5><?php echo $row['description'] ?></h5> 
                 <label>Rs:</label> <label class='card-text'><?php echo $row['price'] ?>.00</label> 
+
+                <br><br>
+                <a href="productDetail.php?id=<?php echo $row['id'] ?>"type="button" class="btn btn-success btn-sm">view</a>
                
                 </div> 
                 <div class='card-footer'>
@@ -131,33 +134,16 @@
               </div>
             </div>
           
-    <?php
-            }else{ ?>
+  
 
-<div class='col-lg-3 col-md-4 mb-3 ml-5 mr-5 mt-5'>
-          <div class='card h-100'> 
-          <a href='#'><img class='card-img-top' src="photo/product/<?php echo $row['image'] ?>"></a>
-         <div class='card-body'>
-            <h4 class='card-title'>
-                   <a href='#'></a>
-                   <p class='card-text'style="font-family: 'Times New Roman;"><?php echo $row['name'] ?></p> 
-             
-                 <h5><?php echo $row['description'] ?></h5> 
-                <label>Rs:</label> <label class='card-text'><?php echo $row['price'] ?>.00</label> 
-               
-                </div> 
-                <div class='card-footer'>
-                 <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small> 
-              </div>
-              </div>
-            </div>
+
 
          <?php   }
-            $a++;
-               }
+            
+              
     ?>
         </div>
-            <input type="button" id="answer" value="Show Div" onclick="myFunction()" />
+           
           </div>
     </div>
 
