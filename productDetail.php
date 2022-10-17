@@ -163,11 +163,11 @@
                
                    if(isset($_GET['id'])){
                      $pid=$_GET['id'];
-                     $sql="SELECT * FROM product WHERE id='$pid'";
-                     $res=mysqli_query($conn,$sql);
-               
-                     $row=mysqli_fetch_assoc($res);
-
+					 $sql1="SELECT * FROM product WHERE id=$pid";
+					 $res1=mysqli_query($conn,$sql1);
+				 
+					 $row=mysqli_fetch_assoc($res1);
+                    
 				   	}
 
 					 ?>
@@ -181,10 +181,7 @@
 					<?php
 
 					$i=2;
-								$sql1="SELECT * FROM product WHERE id=$i";
-								$res1=mysqli_query($conn,$sql1);
-							
-								$row=mysqli_fetch_assoc($res1);
+						
 								
 
 								
