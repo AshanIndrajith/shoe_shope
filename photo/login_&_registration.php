@@ -168,6 +168,30 @@
                     <input type="text" class="input-field" placeholder="User name" name="name" required>
                     <input type="email" class="input-field" placeholder="Email " name="email" required>
                     <input type="text" class="input-field" placeholder="Telephone" name="tel"required>
+
+                    <div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-street-view"></i></span>
+							</div>
+                            <select name="district" class="form-control input_user">
+                                <?php
+                                
+                                    $sql = "SELECT * FROM `district`";
+                                
+                                    $result = mysqli_query($conn, $sql);
+                                
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while($row = mysqli_fetch_assoc($result)) {
+                                            echo "<option value='{$row['id']}'>{$row['name']}</option>";
+                                        }
+                                    } else {
+                                        echo "<option disabled>Empty list</option>";
+                                    }
+                                
+                                ?>
+                            </select>
+						</div>
+                        
                       <input type="password" class="input-field" placeholder="Enter password" name="pwd" required>
                       <input type="password" class="input-field" name="cpwd" required placeholder="Confirm Your Password">
 
