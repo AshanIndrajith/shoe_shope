@@ -152,72 +152,54 @@
           </div>
           <div class="container-fluid ">
           <div class="row" >
+          <?php
+               $conn=mysqli_connect('localhost','root','','tiyana');
+       
+               $sql="SELECT * FROM product";
+               $result=mysqli_query($conn,$sql);
+               
+               
+      
+               while($row=mysqli_fetch_array($result))
+               
+                    
+               {
 
-            <div class="col-lg-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="photo/home/nine.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
+                
+                  
+  
+               ?>
+               
+
+         <div class='col-lg-3 col-md-4 mb-3 ml-5 mr-5 mt-5'>
+          <div class='card h-100'> 
+          <a href='#'><img class='card-img-top' src="photo/product/<?php echo $row['image'] ?>"></a>
+         <div class='card-body'>
+            <h4 class='card-title'>
+                   <a href='#'></a>
+                   <p class='card-text' style="font-family: 'Times New Roman;"><?php echo $row['name'] ?></p> 
+             
+                 <h5><?php echo $row['description'] ?></h5> 
+                <label>Rs:</label> <label class='card-text'><?php echo $row['price'] ?>.00</label> 
+
+                <br><br>
+                <a href="productDetail.php?id=<?php echo $row['id'] ?>"type="button" class="btn btn-success btn-sm">view</a>
+               
+                </div> 
+                <div class='card-footer'>
+                 <small class='text-muted'>&#9733; &#9733; &#9733; &#9733; &#9734;</small> 
+              </div>
               </div>
             </div>
+          
+  
 
-            <div  class="col-lg-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="photo/home/nine.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Two</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
 
-            <div  class="col-lg-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="photo/home/nine.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Three</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
 
-            <div  class="col-lg-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="photo/home/nine.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item Three</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
-
-</div>
+         <?php   }
+            
+              
+    ?>
 
           </div>
           <!-- /.row -->

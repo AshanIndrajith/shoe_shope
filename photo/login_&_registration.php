@@ -37,11 +37,12 @@
             $pwd=$_POST['pwd'];
             $pass=password_hash($pwd,PASSWORD_DEFAULT); 
             $cpass=$_POST['cpwd'];
+            $dis=$_POST['district'];
 
             //echo $pass;
            
         
-            $select=" SELECT * FROM customer WHERE email = '$email' && password='$pass' ";
+            $select=" SELECT * FROM customer WHERE email = '$email' && password='$pass'";
             $result= mysqli_query($conn, $select);
         
             if(mysqli_num_rows($result)>0){          //Checking whether the entered email already exist in the system
@@ -51,9 +52,9 @@
                     $error[]='passwords not matched';
                 }else{
                     $insert="INSERT INTO 
-                            customer(user_name,Telephone,email,password)
+                            customer(user_name,Telephone,email,password,district_id)
                              VALUE
-                            ('$name','$tel','$email','$pass')";
+                            ('$name','$tel','$email','$pass','$dis')";
                             if (mysqli_query($conn,$insert)){
 
                                 echo "query okay";
@@ -168,7 +169,7 @@
                     <input type="text" class="input-field" placeholder="User name" name="name" required>
                     <input type="email" class="input-field" placeholder="Email " name="email" required>
                     <input type="text" class="input-field" placeholder="Telephone" name="tel"required>
-
+                      <br><br>
                     <div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fa fa-street-view"></i></span>
@@ -191,7 +192,7 @@
                                 ?>
                             </select>
 						</div>
-                        
+                        <br><br><br>
                       <input type="password" class="input-field" placeholder="Enter password" name="pwd" required>
                       <input type="password" class="input-field" name="cpwd" required placeholder="Confirm Your Password">
 
